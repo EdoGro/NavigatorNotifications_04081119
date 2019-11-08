@@ -9,7 +9,8 @@
             document.addEventListener("deviceready",onDeviceReady,false);
         }
         function onDeviceReady() {
-            document.getElementById("dialogAlert").addEventListener("click", dialogAlert);
+         navigator.notification.alert(dialogAlert, dialogAlert);
+            //document.getElementById("dialogAlert").addEventListener("click", dialogAlert);
             document.getElementById("dialogConfirm").addEventListener("click", dialogConfirm);
             document.getElementById("dialogPrompt").addEventListener("click", dialogPrompt);
             document.getElementById("dialogBeep").addEventListener("click", dialogBeep);
