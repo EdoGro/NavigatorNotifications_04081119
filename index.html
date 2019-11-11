@@ -9,24 +9,23 @@
             document.addEventListener("deviceready",onDeviceReady,false);
         }
         function onDeviceReady() {
-         navigator.notification.alert(dialogAlert, dialogAlert);
-            //document.getElementById("dialogAlert").addEventListener("click", dialogAlert);
+            document.getElementById("dialogAlert").addEventListener("click", dialogAlert);
             document.getElementById("dialogConfirm").addEventListener("click", dialogConfirm);
             document.getElementById("dialogPrompt").addEventListener("click", dialogPrompt);
             document.getElementById("dialogBeep").addEventListener("click", dialogBeep);
         }
         function dialogAlert() {
-            var message = "Soy una alerta!";
+            var message = "¡Soy una alerta!";
             var title = "ALERTA";
             var buttonName = "Botón de alerta";
             navigator.notification.alert(message, alertCallback, title, buttonName);
             
             function alertCallback() {
-                console.log("LA alerta esta perdida!");
+                console.log("La alerta esta perdida");
             }
         }
         function dialogConfirm() {
-            var message = "Confirmar la alerta?";
+            var message = "¿Confirmar la alerta?";
             var title = "CONFIRMAR";
             var buttonLabels = "SI,NO";
             navigator.notification.confirm(message, confirmCallback, title, buttonLabels);
@@ -35,15 +34,14 @@
             }  
         }
         function dialogPrompt() {
-            var message = "Soy un dialogo Prompt?";
+            var message = "Soy un diálogo Prompt";
             var title = "PROMPT";
             var buttonLabels = ["SI","NO"];
             var defaultText = "Default"
             navigator.notification.prompt(message, promptCallback, 
                 title, buttonLabels, defaultText);
             function promptCallback(result) {
-                console.log("Presionaste el botón " + result.buttonIndex + "\n" + 
-                    "Entraste" +  result.input1);
+                console.log("Presionaste el botón " + result.buttonIndex + "\n"+"Entraste" +  result.input1);
             } 
         }
         function dialogBeep() {
@@ -54,7 +52,7 @@
  </head>
  <body onload="onBodyLoad()">
     <h1>Navigator Notifications</h1>
-    <p>Esto es una aplicación hecha en PhoneGap.</p>
+    <p>Esto es una aplicación hecha en PhoneGap, para dar un ejemplo rápido de las Alertas con navigator.</p>
     <p>Integrante: <br>Guerrero Sandoval Edith Citlali.</p>
     
     <button id = "dialogAlert">ALERT</button>
